@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class NumberSorter {
+public class NumbersSorter {
 
     public static void main(String[] args) throws IOException {
 
