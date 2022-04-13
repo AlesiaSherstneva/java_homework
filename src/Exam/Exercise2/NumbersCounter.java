@@ -1,6 +1,6 @@
-package Exam.Exersice2;
+package Exam.Exercise2;
 
-public class TicketsCounter {
+public class NumbersCounter {
     public static void main(String[] args) {
         int number = 0;
         String str;
