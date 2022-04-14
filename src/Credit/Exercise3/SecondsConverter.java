@@ -1,6 +1,6 @@
-package Credit;
+package Credit.Exercise3;
 
-public class Exercise3 {
+public class SecondsConverter {
     public static void main(String[] args) {
         int n = (int) (Math.random() * 28800);
         System.out.println(n);
