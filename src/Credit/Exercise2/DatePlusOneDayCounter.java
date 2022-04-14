@@ -9,7 +9,7 @@ public class DatePlusOneDayCounter {
         GregorianCalendar calendar = new GregorianCalendar();
         Scanner scanner = new Scanner(System.in);
 
-        //немножко читерское рещение :-)
+        //немного читерское решение :-)
 
         System.out.print("Введите день: ");
         calendar.set(Calendar.DAY_OF_MONTH, scanner.nextInt());
