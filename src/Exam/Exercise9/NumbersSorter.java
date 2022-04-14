@@ -1,4 +1,4 @@
-package Exam;
+package Exam.Exercise9;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
