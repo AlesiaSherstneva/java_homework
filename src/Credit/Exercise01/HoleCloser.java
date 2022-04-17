@@ -1,4 +1,4 @@
-package Credit.Exercise1;
+package Credit.Exercise01;
 
 
 import java.util.Scanner;

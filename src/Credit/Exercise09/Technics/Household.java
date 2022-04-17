@@ -1,6 +1,6 @@
-package Credit.Exercise9.Technics;
+package Credit.Exercise09.Technics;
 
-import Credit.Exercise9.Properties.*;
+import Credit.Exercise09.Properties.*;
 
 public abstract class Household {
     protected String name;

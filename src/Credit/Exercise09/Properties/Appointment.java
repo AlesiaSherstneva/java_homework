@@ -1,4 +1,4 @@
-package Credit.Exercise9.Properties;
+package Credit.Exercise09.Properties;
 
 public enum Appointment {
     FOR_KITCHEN,

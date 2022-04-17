@@ -1,10 +1,10 @@
-package Credit.Exercise9;
+package Credit.Exercise09;
 
 import java.util.*;
 
-import Credit.Exercise9.Properties.Appointment;
-import Credit.Exercise9.Properties.Size;
-import Credit.Exercise9.Technics.*;
+import Credit.Exercise09.Properties.Appointment;
+import Credit.Exercise09.Properties.Size;
+import Credit.Exercise09.Technics.*;
 
 public class Main {
     public static void main(String[] args) {

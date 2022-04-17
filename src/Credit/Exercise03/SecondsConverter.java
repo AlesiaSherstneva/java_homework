@@ -1,4 +1,4 @@
-package Credit.Exercise3;
+package Credit.Exercise03;
 
 public class SecondsConverter {
     public static void main(String[] args) {

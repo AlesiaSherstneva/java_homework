@@ -1,4 +1,4 @@
-package Credit.Exercise2;
+package Credit.Exercise02;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
