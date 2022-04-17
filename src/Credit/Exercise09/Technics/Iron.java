@@ -1,7 +1,7 @@
-package Credit.Exercise9.Technics;
+package Credit.Exercise09.Technics;
 
-import Credit.Exercise9.Properties.Appointment;
-import Credit.Exercise9.Properties.Size;
+import Credit.Exercise09.Properties.Appointment;
+import Credit.Exercise09.Properties.Size;
 
 public class Iron extends Household {
     public Iron() {

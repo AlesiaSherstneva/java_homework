@@ -1,4 +1,4 @@
-package Credit.Exercise5;
+package Credit.Exercise05;
 
 public class SymmetricalTimeSearcher {
     public static void main(String[] args) {

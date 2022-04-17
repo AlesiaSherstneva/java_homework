@@ -1,4 +1,4 @@
-package Credit.Exercise8;
+package Credit.Exercise08;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
