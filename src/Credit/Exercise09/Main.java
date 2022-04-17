@@ -2,8 +2,7 @@ package Credit.Exercise09;
 
 import java.util.*;
 
-import Credit.Exercise09.Properties.Appointment;
-import Credit.Exercise09.Properties.Size;
+import Credit.Exercise09.Properties.*;
 import Credit.Exercise09.Technics.*;
 
 public class Main {
