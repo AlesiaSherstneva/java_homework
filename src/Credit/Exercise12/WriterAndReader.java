@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Exercise12 {
+public class WriterAndReader {
 
     public static void main(String[] args) {
 
