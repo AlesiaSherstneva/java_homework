@@ -4,7 +4,7 @@ import java.util.Locale;
 
 public class PalindromeChecker {
     public static void main(String[] args) {
-        String[] words = {"Madam i’m Adam", "Palindrome", "Olson in Oslo", "1234512345", "123454321"};
+        String[] words = {"Madam i’m Adam", "Palindrome", "Olson in Oslo", "1234512345", "123454321", "1234554321"};
         PalindromeChecker checker = new PalindromeChecker();
         for (String word: words) {
             System.out.println("Is the word \"" + word + "\" palindrome? - " + checker.checkPalindrome(word));
