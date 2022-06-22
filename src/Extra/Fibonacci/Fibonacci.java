@@ -15,10 +15,10 @@ public class Fibonacci {
         } else if (number == 1) {
             System.out.println(second);
         } else {
-            for (int i = 1; i <= number - 2; i++) {
-                temp = first;
-                first += second;
-                second = temp;
+            for (int i = 2; i < number; i++) {
+                temp = second;
+                second += first;
+                first = temp;
             }
             System.out.println(first + second);
         }
