@@ -10,6 +10,7 @@ public class Fibonacci {
         long number = scanner.nextLong();
 
         long first = 0, second = 1, temp;
+
         if (number == 0) {
             System.out.println(first);
         } else if (number == 1) {
