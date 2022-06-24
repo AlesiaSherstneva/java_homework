@@ -1,8 +1,6 @@
 package Extra.GrowingSubArray;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class GrowingSubArray {
     public static void main(String[] args) {
@@ -10,10 +8,14 @@ public class GrowingSubArray {
         int[] secondArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11};
         int[] thirdArray = {1, 1, 1};
 
-        System.out.println("Array: " + Arrays.toString(firstArray));
+        System.out.println("First array: " + Arrays.toString(firstArray));
         System.out.println("Max subarray: " + checkSortArrayLength(firstArray));
 
+        System.out.println("Second array: " + Arrays.toString(secondArray));
+        System.out.println("Max subarray: " + checkSortArrayLength(secondArray));
 
+        System.out.println("Third array: " + Arrays.toString(thirdArray));
+        System.out.println("Max subarray: " + checkSortArrayLength(thirdArray));
     }
 
     static int checkSortArrayLength(int[] array) {
