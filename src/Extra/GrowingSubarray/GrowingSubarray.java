@@ -1,4 +1,4 @@
-package Extra.GrowingSubArray;
+package Extra.GrowingSubarray;
 
 import java.util.Arrays;
 
