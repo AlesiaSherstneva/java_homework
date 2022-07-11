@@ -1,27 +1,32 @@
 package Extra.LinkedListReverse;
 
+import java.util.Scanner;
+
 public class LinkedListReverser {
     public static void main(String[] args) {
-        //TODO: write testing code 04-07-2022
-    }
+        System.out.print("Sample input:\n  ");
+        Scanner scanner = new Scanner(System.in);
+        int listSize = scanner.nextInt();
 
-    Node reverse(Node head) {
-        Node prev = null;
-        Node current = head;
-        Node next;
-        while (current != null) {
-            next = current.getNext();
-            current.setNext(prev);
-            prev = current;
-            current = next;
+        MyLinkedList list = new MyLinkedList();
+        for (int i = 1; i < listSize; i++) {
+            list.add(i);
         }
-        head = prev;
-        return head;
-    }
+        System.out.println("Sample output:");
+        System.out.println("  Input:    " + list + "\n");
 
-    interface Node {
-        Node getNext();
+        System.out.print("  Expected: ");
+        for (int i = listSize - 1; i > 0; i--) {
+            if (i == listSize - 1) {
+                System.out.print("[" + i + ",");
+            } else if (i == 1) {
+                System.out.print(" " + i + "]\n");
+            } else {
+                System.out.print(" " + i + ",");
+            }
+        }
 
-        void setNext(Node next);
+        list.reverse(list.getHead());
+        System.out.println("  Actual:   " + list);
     }
 }
