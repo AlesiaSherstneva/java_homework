@@ -61,7 +61,6 @@ public class LinkedListMerger {
     static class Node {
         private int data;
         private Node next;
-        public int size;
 
         public Node(int data, Node next) {
             this.data = data;
