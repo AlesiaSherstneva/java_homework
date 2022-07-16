@@ -61,7 +61,6 @@ public class LinkedListMerger {
     static class Node {
         private int data;
         private Node next;
-        public int size;
 
         public Node(int data, Node next) {
             this.data = data;
@@ -88,7 +87,7 @@ public class LinkedListMerger {
         public String toString() {
             StringBuilder result = new StringBuilder();
 
-            // из-за особенностей структуры класса, первому и последнему элементу массива "особое приглашение" нужно :-)
+            // из-за особенностей структуры класса, первому и последнему элементу "особое приглашение" нужно :-)
 
             result.append(data);
 
