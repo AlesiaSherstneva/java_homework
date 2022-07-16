@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Fibonacci {
     public static void main(String[] args) {
-        System.out.print("Enter the number: ");
+        System.out.println("Enter the number:");
 
         Scanner scanner = new Scanner(System.in);
         long number = scanner.nextLong();
@@ -21,7 +21,7 @@ public class Fibonacci {
                 second += first;
                 first = temp;
             }
-            System.out.println(first + second);
+            System.out.println("Fibonacci's number:\n" + (first + second));
         }
     }
 }
