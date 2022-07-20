@@ -15,6 +15,11 @@ public class Calculator {
             if (priority == 1) stack.push(symbol);
             if (priority > 1) {
                 current += " ";
+                //проверка на унарный минус
+                if (symbol == '-' && (i == 0 || expression.charAt(i-1) == '(')) {
+                    //отделяем унарный минус от бинарного, преобразуя его в значок "тильда"
+                    symbol = '~';
+                }
                 while (!stack.empty()) {
                     if (getPriority(stack.peek()) >= priority) current += stack.pop();
                     else break;
@@ -48,18 +53,23 @@ public class Calculator {
             }
 
             if (getPriority(rpn.charAt(i)) > 1) {
+                if (rpn.charAt(i) == '~') {
+                    stack.push(stack.empty() ? 0 : -stack.pop());
+                    continue;
+                }
                 double a = stack.pop(), b = stack.pop();
-                if(rpn.charAt(i) == '+') stack.push(b+a);
-                if(rpn.charAt(i) == '-') stack.push(b-a);
-                if(rpn.charAt(i) == '*') stack.push(b*a);
-                if(rpn.charAt(i) == '/') stack.push(b/a);
+                if (rpn.charAt(i) == '+') stack.push(b + a);
+                if (rpn.charAt(i) == '-') stack.push(b - a);
+                if (rpn.charAt(i) == '*') stack.push(b * a);
+                if (rpn.charAt(i) == '/') stack.push(b / a);
             }
         }
         return stack.pop();
     }
 
     public static int getPriority(char symbol) {
-        if (symbol == '*' || symbol == '/') return 3;
+        if (symbol == '~') return 4; // унарный минус
+        else if (symbol == '*' || symbol == '/') return 3;
         else if (symbol == '+' || symbol == '-') return 2;
         else if (symbol == '(') return 1;
         else if (symbol == ')') return -1;
