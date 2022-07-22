@@ -3,7 +3,19 @@ package Extra.RPN_Calculator;
 import java.util.Stack;
 
 public class Calculator {
-    public static String expressionToRPN(String expression) {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        String[] expressions  = {"2+2*(3+4)"};
+        for (String expression : expressions) {
+            System.out.println(expression + " = " + calculator.calculate(expression));
+        }
+    }
+
+    int calculate(String mathString) {
+        return RPNToAnswer(expressionToRPN(mathString));
+    }
+
+    String expressionToRPN(String expression) {
         String current = "";
         Stack<Character> stack = new Stack<>();
         int priority;
@@ -37,9 +49,9 @@ public class Calculator {
         return current;
     }
 
-    public static double RPNToAnswer(String rpn) {
+    int RPNToAnswer(String rpn) {
         String operand = "";
-        Stack<Double> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < rpn.length(); i++) {
             if (rpn.charAt(i) == ' ') continue;
@@ -48,7 +60,7 @@ public class Calculator {
                     operand += rpn.charAt(i++);
                     if (i == rpn.length()) break;
                 }
-                stack.push(Double.parseDouble(operand));
+                stack.push(Integer.parseInt(operand));
                 operand = "";
             }
 
@@ -57,7 +69,7 @@ public class Calculator {
                     stack.push(stack.empty() ? 0 : -stack.pop());
                     continue;
                 }
-                double a = stack.pop(), b = stack.pop();
+                int a = stack.pop(), b = stack.pop();
                 if (rpn.charAt(i) == '+') stack.push(b + a);
                 if (rpn.charAt(i) == '-') stack.push(b - a);
                 if (rpn.charAt(i) == '*') stack.push(b * a);
@@ -67,7 +79,7 @@ public class Calculator {
         return stack.pop();
     }
 
-    public static int getPriority(char symbol) {
+    int getPriority(char symbol) {
         if (symbol == '~') return 4; // унарный минус
         else if (symbol == '*' || symbol == '/') return 3;
         else if (symbol == '+' || symbol == '-') return 2;
