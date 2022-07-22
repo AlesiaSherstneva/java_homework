@@ -39,7 +39,7 @@ public class MyLinkedList {
     }
 
     public void remove(int index) {
-        if(index == 0) {
+        if (index == 0) {
             head = head.getNext();
             size--;
             return;
