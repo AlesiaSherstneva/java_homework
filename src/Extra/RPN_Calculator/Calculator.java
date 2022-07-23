@@ -5,7 +5,7 @@ import java.util.Stack;
 public class Calculator {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        String[] expressions  = {"2+2*(3+4)"};
+        String[] expressions  = {"2+2*(3+4)", "72/12-8*(1+4)", "2*(3+2*(1+2*(1+3)))", "-5+(-20)*(-3)"};
         for (String expression : expressions) {
             System.out.println(expression + " = " + calculator.calculate(expression));
         }
