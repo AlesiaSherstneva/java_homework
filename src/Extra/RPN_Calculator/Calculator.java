@@ -1,11 +1,13 @@
 package Extra.RPN_Calculator;
 
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Calculator {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        String[] expressions = {"2+2*(3+4)", "72/12-8*(1+4)", "2*(3+2*(1+2*(1+3)))", "-5+(-20)*(-3)"};
+        String[] expressions = {"2+2*(3+4)", "72/12-8*(1+4)", "2*(3+2*(1+2*(1+3)))", "-5+(-20)*(-3)", "ABC"};
         for (String expression : expressions) {
             System.out.println(expression + " = " + calculator.calculate(expression));
         }
@@ -22,6 +24,13 @@ public class Calculator {
 
         for (int i = 0; i < expression.length(); i++) {
             char symbol = expression.charAt(i);
+
+            Pattern pattern = Pattern.compile("(\\d|~|\\*|/|\\+|-|\\(|\\))", Pattern.CASE_INSENSITIVE);
+            Matcher matcher = pattern.matcher(String.valueOf(symbol));
+            if(!matcher.find()) {
+                throw new IllegalArgumentException("Illegal symbol in the expression!");
+            }
+
             priority = getPriority(symbol);
             if (priority == 0) current += symbol;
             if (priority == 1) stack.push(symbol);
@@ -54,6 +63,7 @@ public class Calculator {
         Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < rpn.length(); i++) {
+
             if (rpn.charAt(i) == ' ') continue;
             if (getPriority(rpn.charAt(i)) == 0) {
                 while (rpn.charAt(i) != ' ' && getPriority(rpn.charAt(i)) == 0) {
