@@ -1,11 +1,13 @@
 package Extra.RPN_Calculator;
 
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Calculator {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        String[] expressions  = {"2+2*(3+4)", "72/12-8*(1+4)", "2*(3+2*(1+2*(1+3)))", "-5+(-20)*(-3)"};
+        String[] expressions = {"2+2*(3+4)", "72/12-8*(1+4)", "2*(3+2*(1+2*(1+3)))", "-5+(-20)*(-3)", "ABC"};
         for (String expression : expressions) {
             System.out.println(expression + " = " + calculator.calculate(expression));
         }
@@ -22,13 +24,20 @@ public class Calculator {
 
         for (int i = 0; i < expression.length(); i++) {
             char symbol = expression.charAt(i);
+
+            Pattern pattern = Pattern.compile("(\\d|~|\\*|/|\\+|-|\\(|\\))", Pattern.CASE_INSENSITIVE);
+            Matcher matcher = pattern.matcher(String.valueOf(symbol));
+            if(!matcher.find()) {
+                throw new IllegalArgumentException("Illegal symbol in the expression!");
+            }
+
             priority = getPriority(symbol);
             if (priority == 0) current += symbol;
             if (priority == 1) stack.push(symbol);
             if (priority > 1) {
                 current += " ";
                 //проверка на унарный минус
-                if (symbol == '-' && (i == 0 || expression.charAt(i-1) == '(')) {
+                if (symbol == '-' && (i == 0 || expression.charAt(i - 1) == '(')) {
                     //отделяем унарный минус от бинарного, преобразуя его в значок "тильда"
                     symbol = '~';
                 }
@@ -54,6 +63,7 @@ public class Calculator {
         Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < rpn.length(); i++) {
+
             if (rpn.charAt(i) == ' ') continue;
             if (getPriority(rpn.charAt(i)) == 0) {
                 while (rpn.charAt(i) != ' ' && getPriority(rpn.charAt(i)) == 0) {
@@ -80,11 +90,13 @@ public class Calculator {
     }
 
     int getPriority(char symbol) {
-        if (symbol == '~') return 4; // унарный минус
-        else if (symbol == '*' || symbol == '/') return 3;
-        else if (symbol == '+' || symbol == '-') return 2;
-        else if (symbol == '(') return 1;
-        else if (symbol == ')') return -1;
-        else return 0;
+        return switch (symbol) {
+            case '~' -> 4;
+            case '*', '/' -> 3;
+            case '+', '-' -> 2;
+            case '(' -> 1;
+            case ')' -> -1;
+            default -> 0;
+        };
     }
 }
