@@ -27,30 +27,36 @@ public class Calculator {
 
             Pattern pattern = Pattern.compile("(\\d|~|\\*|/|\\+|-|\\(|\\))", Pattern.CASE_INSENSITIVE);
             Matcher matcher = pattern.matcher(String.valueOf(symbol));
-            if(!matcher.find()) {
+            if (!matcher.find()) {
                 throw new IllegalArgumentException("Illegal symbol in the expression!");
             }
 
             priority = getPriority(symbol);
-            if (priority == 0) current += symbol;
-            if (priority == 1) stack.push(symbol);
-            if (priority > 1) {
-                current += " ";
-                //проверка на унарный минус
-                if (symbol == '-' && (i == 0 || expression.charAt(i - 1) == '(')) {
-                    //отделяем унарный минус от бинарного, преобразуя его в значок "тильда"
-                    symbol = '~';
+
+            switch (priority) {
+                case 0 -> current += symbol;
+                case 1 -> stack.push(symbol);
+                case 2, 3 -> {
+                    {
+                        current += " ";
+                        //проверка на унарный минус
+                        if (symbol == '-' && (i == 0 || expression.charAt(i - 1) == '(')) {
+                            //отделяем унарный минус от бинарного, преобразуя его в значок "тильда"
+                            symbol = '~';
+                        }
+                        while (!stack.empty()) {
+                            if (getPriority(stack.peek()) >= priority) current += stack.pop();
+                            else break;
+                        }
+                        stack.push(symbol);
+
+                    }
                 }
-                while (!stack.empty()) {
-                    if (getPriority(stack.peek()) >= priority) current += stack.pop();
-                    else break;
+                case -1 -> {
+                    current += " ";
+                    while (getPriority(stack.peek()) != 1) current += stack.pop();
+                    stack.pop();
                 }
-                stack.push(symbol);
-            }
-            if (priority == -1) {
-                current += " ";
-                while (getPriority(stack.peek()) != 1) current += stack.pop();
-                stack.pop();
             }
         }
 
