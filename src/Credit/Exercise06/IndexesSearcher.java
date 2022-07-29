@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class IndexesSearcher {
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите размер массива: ");
         int[] array = new int[scanner.nextInt()];
@@ -13,9 +12,8 @@ public class IndexesSearcher {
             array[i] = (int) (Math.random() * 100);
         }
 
-        String str = String.format("Массив из %d случайных чисел:", array.length);
-        System.out.println(str);
-        for (int element : array){
+        System.out.printf("Массив из %d случайных чисел:", array.length);
+        for (int element : array) {
             System.out.print(element + " ");
         }
         System.out.println();
@@ -31,9 +29,7 @@ public class IndexesSearcher {
             }
         }
 
-        str = String.format("Максимальный элемент массива: %d. Его индекс: %d", max, iMax);
-        System.out.println(str);
-        str = String.format("Минимальный элемент массива: %d. Его индекс: %d", min, iMin);
-        System.out.println(str);
+        System.out.printf("Максимальный элемент массива: %d. Его индекс: %d\n", max, iMax);
+        System.out.printf("Минимальный элемент массива: %d. Его индекс: %d", min, iMin);
     }
 }

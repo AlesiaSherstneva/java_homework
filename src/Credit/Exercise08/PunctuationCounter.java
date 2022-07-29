@@ -73,6 +73,6 @@ public class PunctuationCounter {
             counter++;
         }
 
-        System.out.println("В заданном предложении " + counter + " знаков препинания.");
+        System.out.printf("В заданном предложении %d знаков препинания.", counter);
     }
 }

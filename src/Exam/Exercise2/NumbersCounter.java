@@ -10,6 +10,6 @@ public class NumbersCounter {
                 number++;
             }
         }
-        System.out.println("Нужно будет исключить " + number + " номеров");
+        System.out.printf("Нужно будет исключить %d номеров", number);
     }
 }

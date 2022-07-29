@@ -19,7 +19,6 @@ public class SymmetricalTimeSearcher {
                 }
             }
         }
-
-        System.out.println("Симметричная комбинация на электронных часах показывается " + counter + " раз");
+        System.out.printf("Симметричная комбинация на электронных часах показывается %d раз", counter);
     }
 }

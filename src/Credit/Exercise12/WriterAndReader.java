@@ -35,52 +35,27 @@ public class WriterAndReader {
             e.printStackTrace();
         }
 
+        int countWords = 0, countPunctuations = 0;
+
         //считаем слова в тексте
 
-        int countWords = 0;
         Pattern pattern = Pattern.compile("[a-zA-Zа-яА-ЯёЁ]+");
         Matcher matcher = pattern.matcher(readingText);
         while (matcher.find()) {
             countWords++;
         }
 
-        // для поиска знаков препинания я воспользовалась готовым решением из доп.задания №8
+        /* для поиска знаков препинания я воспользовалась решением из доп.задания №8,
+        оптимизировав его в виде массива регулярных выражений и циклического поиска */
 
-        int countPunctuations = 0;
-        pattern = Pattern.compile("[,!?:;]");
-        matcher = pattern.matcher(readingText);
-        while (matcher.find()) {
-            countPunctuations++;
-        }
-        pattern = Pattern.compile("\\.{3}");
-        matcher = pattern.matcher(readingText);
-        while (matcher.find()) {
-            countPunctuations++;
-        }
-        pattern = Pattern.compile("[^.]\\.[^.]");
-        matcher = pattern.matcher(readingText);
-        while (matcher.find()) {
-            countPunctuations++;
-        }
-        pattern = Pattern.compile("[^.]\\.$");
-        matcher = pattern.matcher(readingText);
-        while (matcher.find()) {
-            countPunctuations++;
-        }
-        pattern = Pattern.compile("\"+[^\"]+\"");
-        matcher = pattern.matcher(readingText);
-        while (matcher.find()) {
-            countPunctuations++;
-        }
-        pattern = Pattern.compile("\\(+[^(]+\\)");
-        matcher = pattern.matcher(readingText);
-        while (matcher.find()) {
-            countPunctuations++;
-        }
-        pattern = Pattern.compile("-+\s");
-        matcher = pattern.matcher(readingText);
-        while (matcher.find()) {
-            countPunctuations++;
+        String[] regExes = {"[,!?:;]", "\\.{3}", "[^.]\\.[^.]", "[^.]\\.$", "\"+[^\"]+\"", "\\(+[^(]+\\)", "-+\s"};
+
+        for(String regEx: regExes) {
+            pattern = Pattern.compile(regEx);
+            matcher = pattern.matcher(readingText);
+            while (matcher.find()) {
+                countPunctuations++;
+            }
         }
 
         System.out.printf("В прочитанном тексте %d слов и %d знаков препинания.", countWords, countPunctuations);

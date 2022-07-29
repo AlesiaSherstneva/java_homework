@@ -15,12 +15,12 @@ public class PrimeNumbersSearcher {
                 counter++;
             }
             if (counter > 2) {
-                System.out.println("Число " + number + " не является простым");
+                System.out.printf("Число %d не является простым", number);
                 break;
             }
         }
         if (counter == 2) {
-            System.out.println("Число " + number + " является простым");
+            System.out.printf("Число %d является простым", number);
         }
     }
 }

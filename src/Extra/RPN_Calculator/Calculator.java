@@ -77,18 +77,18 @@ public class Calculator {
 
         for (int i = 0; i < rpn.length(); i++) {
             symbol = rpn.charAt(i);
-            if (symbol == ' ') continue;
+            if (rpn.charAt(i) == ' ') continue;
 
             priority = getPriority(symbol);
             if (priority == 0) {
-                while (rpn.charAt(i) != ' ' && getPriority(rpn.charAt(i)) == 0) {
-                    operand.append(rpn.charAt(i++));
-                    if (i == rpn.length()) break;
+                while (symbol != ' ' && getPriority(symbol) == 0) {
+                    operand.append(symbol);
+                    symbol = rpn.charAt(++i);
                 }
                 stack.push(Integer.parseInt(operand.toString()));
                 operand = new StringBuilder();
             } else {
-                if (symbol == '~') {
+                if (priority == 4) {
                     /* "ловим" унарный минус, делаем следующее число отрицательным, если оно существует,
                     выходим из цикла и переходим к следующему символу */
                     stack.push(stack.empty() ? 0 : -stack.pop());

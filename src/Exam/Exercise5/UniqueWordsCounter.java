@@ -17,10 +17,10 @@ public class UniqueWordsCounter {
 
         Pattern pattern = Pattern.compile("\\S[\\w]*\\b");
         Matcher matcher = pattern.matcher(str);
-        while (matcher.find()){
+        while (matcher.find()) {
             words.add(str.substring(matcher.start(), matcher.end()).toLowerCase(Locale.ROOT));
         }
 
-        System.out.println("Во введённой строке " + words.size() + " уникальных слов");
+        System.out.printf("Во введённой строке %d уникальных слов", words.size());
     }
 }

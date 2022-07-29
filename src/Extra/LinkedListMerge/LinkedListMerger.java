@@ -57,9 +57,8 @@ public class LinkedListMerger {
         return head;
     }
 
-    @SuppressWarnings("unused")
     static class Node {
-        private int data;
+        private final int data;
         private Node next;
 
         public Node(int data, Node next) {
@@ -69,10 +68,6 @@ public class LinkedListMerger {
 
         public int getData() {
             return data;
-        }
-
-        public void setData(int data) {
-            this.data = data;
         }
 
         public Node getNext() {

@@ -18,28 +18,28 @@ public class Main {
 
 
         LinkedList<String> linkedList = new LinkedList<>();
-        measure = new Measurement(linkedList,100);
-        measures(results,measure);
-        measure = new Measurement(linkedList,10_000);
-        measures(results,measure);
-        measure = new Measurement(linkedList,1_000_000);
-        measures(results,measure);
+        measure = new Measurement(linkedList, 100);
+        measures(results, measure);
+        measure = new Measurement(linkedList, 10_000);
+        measures(results, measure);
+        measure = new Measurement(linkedList, 1_000_000);
+        measures(results, measure);
 
         Set<String> hashSet = new HashSet<>();
         measure = new Measurement(hashSet, 100);
-        measures(results,measure);
+        measures(results, measure);
         measure = new Measurement(hashSet, 10_000);
-        measures(results,measure);
+        measures(results, measure);
         measure = new Measurement(hashSet, 1_000_000);
-        measures(results,measure);
+        measures(results, measure);
 
         TreeSet<String> treeSet = new TreeSet<>();
         measure = new Measurement(treeSet, 100);
-        measures(results,measure);
+        measures(results, measure);
         measure = new Measurement(treeSet, 10_000);
-        measures(results,measure);
+        measures(results, measure);
         measure = new Measurement(treeSet, 1_000_000);
-        measures(results,measure);
+        measures(results, measure);
 
         for (Measurement.Result element : results) {
             System.out.println(element);

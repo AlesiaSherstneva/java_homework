@@ -25,6 +25,7 @@ public class Main {
 
         int allPrice = 0, maxTime = 0;
         Set<String> colors = new HashSet<>();
+
         for (Flower flower : bouquet) {
             colors.add(flower.getColor());
             allPrice += flower.getPrice();

@@ -25,6 +25,6 @@ public class MyNewQueue extends ArrayDeque<Integer> implements MyQueue {
         if (maxList.isEmpty()) {
             return null;
         }
-        return maxList.get(maxList.size()-1);
+        return maxList.get(maxList.size() - 1);
     }
 }
