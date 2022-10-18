@@ -1,8 +1,8 @@
-<p>Задача из курса <a href="https://stepik.org/course/56704">"Подготовка к собеседованию Java"</a> на Stepik.org</p>
+Задача из курса ["Подготовка к собеседованию Java"](https://stepik.org/course/56704") на Stepik.org.
 
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 
-<p>Решение:</p>
+Решение:
 
 ![img_2.png](img_2.png)
