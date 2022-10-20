@@ -19,7 +19,7 @@ public class GrowingSubarray {
     }
 
     static int checkSortArrayLength(int[] array) {
-        int lenght = 1, tempLength = 1;
+        int length = 1, tempLength = 1;
 
         for (int i = 1; i < array.length - 1; i++) {
             while (array[i] >= array[i - 1]) {
@@ -30,11 +30,11 @@ public class GrowingSubarray {
                     break;
                 }
             }
-            if (tempLength > lenght) {
-                lenght = tempLength;
+            if (tempLength > length) {
+                length = tempLength;
             }
             tempLength = 1;
         }
-        return lenght;
+        return length;
     }
 }

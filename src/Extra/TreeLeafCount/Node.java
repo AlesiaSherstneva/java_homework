@@ -2,6 +2,7 @@ package Extra.TreeLeafCount;
 
 import java.util.Stack;
 
+@SuppressWarnings("unused")
 public class Node {
     private final int value;
     private Node left;
