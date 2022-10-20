@@ -17,9 +17,9 @@ public class Node {
         this.right = right;
     }
 
-    public int treeLeafCount(Node root) {
+    public int treeLeafCount() {
         Stack<Node> stack = new Stack<>();
-        stack.push(root);
+        stack.push(this);
 
         int count = 0;
 
