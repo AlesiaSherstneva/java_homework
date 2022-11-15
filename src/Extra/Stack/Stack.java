@@ -75,7 +75,7 @@ class StackTest {
         stack.push(-9);
         System.out.println(stack);
 
-        System.out.println("Pop first numbers");
+        System.out.println("Pop first number");
         stack.pop();
         System.out.println(stack);
 
