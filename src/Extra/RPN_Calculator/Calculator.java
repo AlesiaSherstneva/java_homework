@@ -8,7 +8,6 @@ public class Calculator {
     private char symbol;
     private int priority;
 
-
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         String[] expressions = {"2+2*(3+4)", null, "72/12-8*(1+4)", "", "2*(3+2*(1+2*(1+3)))", "ABC", "-5+(-20)*(-3)"};
