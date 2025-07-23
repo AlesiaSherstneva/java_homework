@@ -1,7 +1,7 @@
-Задача из курса ["Подготовка к собеседованию Java"](https://stepik.org/course/56704") на Stepik.org.
+Задача из курса ["Подготовка к собеседованию Java"](https://stepik.org/course/56704) на Stepik.org.
 
-![img.png](img.png)
+![img.png](pictures/img.png)
 
 Решение:
 
-![img_1.png](img_1.png)
+![img_1.png](pictures/img_1.png)

@@ -1,4 +1,4 @@
-package Extra.TreeLeafCount;
+package Extra.TreeLeavesCount;
 
 import java.util.Stack;
 
@@ -18,7 +18,7 @@ public class Node {
         this.right = right;
     }
 
-    public int treeLeafCount() {
+    public int countLeaves() {
         Stack<Node> stack = new Stack<>();
         stack.push(this);
 

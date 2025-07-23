@@ -1,8 +1,8 @@
-Задача из курса ["Подготовка к собеседованию Java"](https://stepik.org/course/56704") на Stepik.org.
+Задача из курса ["Подготовка к собеседованию Java"](https://stepik.org/course/56704) на Stepik.org.
 
-![img.png](img.png)
+![img.png](pictures/img.png)
 
 В ходе попыток решения задачи и чтения комментариев выяснилось, что под возрастающим массивом 
 имелся в виду неубывающий.
 
-![img_1.png](img_1.png)
+![img_1.png](pictures/img_1.png)

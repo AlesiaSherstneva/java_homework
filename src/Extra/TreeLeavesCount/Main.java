@@ -1,4 +1,4 @@
-package Extra.TreeLeafCount;
+package Extra.TreeLeavesCount;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class Main {
                                 new Node(54,
                                         null, new Node(67)),
                                 new Node(76)));
-        System.out.println("В первом дереве " + firstTree.treeLeafCount() + " листьев");
+        System.out.println("В первом дереве " + firstTree.countLeaves() + " листьев");
 
         Node secondTree =
                 new Node(9,
@@ -33,7 +33,7 @@ public class Main {
                                         new Node(19,
                                                 new Node(18), null),
                                         new Node(21))));
-        System.out.println("Во втором дереве " + secondTree.treeLeafCount() + " листьев");
+        System.out.println("Во втором дереве " + secondTree.countLeaves() + " листьев");
 
         Node thirdTree = new Node(4, null,
                 new Node(7, null,
@@ -42,6 +42,6 @@ public class Main {
                                         new Node(37, null,
                                                 new Node(38, null,
                                                         new Node(43)))))));
-        System.out.println("В третьем дереве " + thirdTree.treeLeafCount() + " листьев");
+        System.out.println("В третьем дереве " + thirdTree.countLeaves() + " листьев");
     }
 }
